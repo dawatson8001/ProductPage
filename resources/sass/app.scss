@@ -1,0 +1,102 @@
+$font-type: Helvetica, sans-serif;
+$font-color: #000000;
+$font-size: 100%;
+
+.container {
+    display: flex;
+}
+.product-container {
+    min-height: 200px;;
+    max-width: 350px;
+    margin: auto;
+    margin-top: 100px;
+    border: 1px solid grey ;
+    border-radius: 10px;
+    max-height: 480px;
+    text-align: center;
+    align-content: center;
+    padding: 20px;
+}
+%product-item {
+    margin: 4% auto 4% auto;
+    font-size: $font-size;
+    font-family: $font-type;
+    color: $font-color;
+    text-align: center;
+    top: -90px;
+    position: relative;
+}
+.product-image {
+    @extend %product-item;
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    background-color: lightgrey;
+}
+.product-name {
+    @extend %product-item;
+    font-weight: bold;
+    font-size: $font-size * 2;
+}
+.product-status {
+    @extend %product-item;
+    height: 40px;
+    width: 100px;
+    border-radius: 20px;
+    background-color: lightgrey;
+    padding-top: 3%;
+    font-weight: bold;
+    margin-bottom: 10%;
+}
+.product-description {
+    @extend %product-item;
+}
+.product-price {
+    @extend %product-item;
+    height: 50px;
+    width: 150px;
+    border-radius: 10px;
+    background-color: lightgrey;
+    font-weight: bold;
+}
+.social-media-container {
+
+    display: inline-block;
+    top: -90px;
+    position: relative;
+}
+.social-media-icon {
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    background-color: lightgrey;
+    display: inline-block;
+    margin: 5px;
+}
+// Override default strip button styles
+button.stripe-button-el,
+button.stripe-button-el>span {
+    @extend %product-item;
+    height: 50px;
+    width: 150px;
+    border-radius: 10px;
+    background-color: lightgrey!important;
+    background-image: none;
+    font-weight: bold;
+    box-shadow: none;
+    line-height: 45px;
+    margin: auto;;
+}
+button:focus {
+    outline:0;
+}
+
+button.stripe-button-el > span {
+    top: 0;
+  }
+
+@media(min-width: 760px) {
+    .product-container {
+        margin-top: 10%;
+    }
+}
